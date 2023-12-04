@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<section id="single">
+    <h1 class="title">{{ .Title }}</h1>
+
+    <div class="tip">
+        <div class="summary-attributes">
+            prep time: {{ .Params.prep_time | default "---" | plainify | htmlUnescape }}
+            <span class="split">
+              ·
+            </span>
+            cook time: {{ .Params.cook_time | default "---" | plainify | htmlUnescape }}
+        </div>
+        <div id="summary-attributes">
+            {{ .Params.difficulty | default "---" | plainify | htmlUnescape }}
+            <span class="split">
+              ·
+            </span>
+            {{ .Params.servings | default "---" | plainify | htmlUnescape }} servings
+            <span class="split">
+              ·
+            </span>
+            {{ .Params.calories | default "---" | plainify | htmlUnescape }} calories
+        </div>
+        <time datetime="{{ .PublishDate }}">{{ i18n "publishDateFull" . }}</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          {{ i18n "wordCount" . }}
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          {{ i18n "minuteRead" . }}
+        </span>
+    </div>
+
+    
+    {{ if or .Site.Params.showToc .Params.showToc }}
+        {{ partial "toc.html" . }}
+    {{ end }}
+
+    <!-- image -->
+    <p class="markdown-image">
+        <img src={{.Params.recipe_image}} alt="">
+    </p>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.tags }}
+        <div class="tags">
+            {{ range . }}
+                <a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </div>
+    {{ end}}
+    
+    {{ partial "comment.html" . }}
+
+</section>
+
+{{ end }}
+

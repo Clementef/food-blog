@@ -1,0 +1,4 @@
+baseURL = 'https://shabbyeats.com/'
+languageCode = 'en-us'
+title = 'Shabby Eats'
+theme = 'mini'
