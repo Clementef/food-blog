@@ -6,8 +6,7 @@ categories:
 draft: true
 
 recipe_image: '/gingerbread.jpg'
-recipe_image_placeholder: 'description of recipe image'
-  #for when the image does not load
+recipe_image_placeholder: 'description of recipe image for when the image does not load'
 one_line_summary: 'A short tagline for the recipe'
 difficulty: 'easy'
 servings: 2
@@ -15,6 +14,10 @@ prep_time: "15 minutes"
 cook_time: "15 minutes"
 calories: 300
 ---
+
+## Description
+
+paragraph of text here.
 
 ## Ingredients
 

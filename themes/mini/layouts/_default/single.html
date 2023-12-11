@@ -6,35 +6,23 @@
     <div class="tip">
         <div class="summary-attributes">
             prep time: {{ .Params.prep_time | default "---" | plainify | htmlUnescape }}
-            <span class="split">
-              ·
-            </span>
+            <span class="split"> · </span>
             cook time: {{ .Params.cook_time | default "---" | plainify | htmlUnescape }}
         </div>
+
         <div id="summary-attributes">
-            {{ .Params.difficulty | default "---" | plainify | htmlUnescape }}
-            <span class="split">
-              ·
-            </span>
+            difficulty: {{ .Params.difficulty | default "---" | plainify | htmlUnescape }}
+            <span class="split"> · </span>
             {{ .Params.servings | default "---" | plainify | htmlUnescape }} servings
-            <span class="split">
-              ·
-            </span>
+            <span class="split"> · </span>
             {{ .Params.calories | default "---" | plainify | htmlUnescape }} calories
         </div>
+
         <time datetime="{{ .PublishDate }}">{{ i18n "publishDateFull" . }}</time>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          {{ i18n "wordCount" . }}
-        </span>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          {{ i18n "minuteRead" . }}
-        </span>
+        <span class="split"> · </span>
+        <span> {{ i18n "wordCount" . }} </span>
+        <span class="split"> · </span>
+        <span> {{ i18n "minuteRead" . }} </span>
     </div>
 
     
@@ -64,4 +52,3 @@
 </section>
 
 {{ end }}
-

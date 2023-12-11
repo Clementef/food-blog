@@ -7,6 +7,7 @@
     {{ range $paginator.Pages }}
         {{ $title := .Title }}
         {{ $summary := .Summary }}
+
         <section class="item">
           <div>
             <h1 class="title"><a href='{{ .RelPermalink }}'>{{ $title }}</a></h1>
@@ -18,12 +19,14 @@
           {{ if ne .Site.Params.hiddenPostSummaryInHomePage true }}
               <div class="summary">
                 <div class="summary-attributes">
-                  time: {{ .Params.time | plainify | htmlUnescape }}
+                  prep time: {{ .Params.prep_time | plainify | htmlUnescape }}
+                  &emsp; <!-- tab -->
+                  cook time: {{ .Params.cook_time | plainify | htmlUnescape }}
                   &emsp; <!-- tab -->
                   difficulty: {{ .Params.difficulty | plainify | htmlUnescape }}
                 </div>
                 <div class="summary-text">
-                  {{ .Summary | truncate 200 | plainify | htmlUnescape }}
+                  {{ .Params.one_line_summary | truncate 200 | plainify | htmlUnescape }}
                 </div>
               </div>
               <!-- <div class="summary">{{ $summary | plainify | htmlUnescape }}</div> -->

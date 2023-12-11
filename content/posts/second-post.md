@@ -13,8 +13,6 @@ difficulty: 'expert'
 
 gingerbread bread is perfect for the holidays
 
-{{< recipe >}}
-
 - mix it up
 - bake it for 30 mins at 350
 - take it out and eat it
